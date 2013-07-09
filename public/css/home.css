@@ -52,6 +52,7 @@ a.pure-button-secondary {
         -webkit-box-sizing: border-box;
         -moz-box-sizing: border-box;
         box-sizing: border-box;
+        margin-right: -1px;
     }
 
     .size-chart-base {
