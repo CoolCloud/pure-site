@@ -1,6 +1,9 @@
 {
   "name": "pure-site",
   "version": "1.3.0",
+  "scripts": {
+        "start": "node server.js"
+  },
   "dependencies": {
     "combohandler": {
       "version": "0.2.2",
