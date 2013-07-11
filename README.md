@@ -1,42 +1,35 @@
-Pure CSS Website
-================
+Pure CSS 中文网站
+=================
 
-The website which showcases [Pure CSS][pure].
+这是[Pure CSS][pure]的展示网站（中文版）
 
 
 [pure]: https://github.com/yui/pure
 
 
-Running Locally
----------------
+本地运行
+--------
 
-This is a node.js site which uses Express.js, which means it's very easy to get
-running locally.
+这是一个基于node.js的网站，使用了Express.js，这意味着，在本地可以很容易跑起来（前提是你要先安装了node.js）
 
 ```shell
 $ npm i
 $ node server
 ```
 
-### Running with Pure Served Locally
+### 和Pure一起在本地运行
 
-Since this website dogfoods [`pure`][pure] it's a great testbed to try out local
-changes you're making to Pure. The following steps explain how to run the
-website with Pure being served locally, and the instruction assume you have
-[Bower][] installed (if not do so now: `sudo npm -g i bower`).
-
-Move into where you have the `pure` project checked out locally, build it via
-`grunt`, then create a global link using Bower:
+当你对[`pure`][pure]做了本地的改变后，你就可以通过这个网站验证下变化。接下来几步是要解释这个网站怎么和Pure一起运行，首先，你要确定你已经安装了[Bower][](如果没安装，请执行以下命令: `sudo npm -g i bower`)，其次，进入到本地的`pure`目录，通过`grunt`构建，然后用Bower创建一个全局的链接:
 
 ```shell
 $ cd pure
+$ npm i #第一次需要安装依赖
+$ bower install #第一次需要安装bower组件
 $ grunt
 $ bower link
 ```
 
-Now you'll need to move into where you have this project checked out locally,
-install the website's npm dependecies (if you haven't done so already),
-link `pure` in `pure-site` using Bower, then start up the server:
+现在进入Pure-site的目录，如果还没有安装依赖，请先`npm i`一下，然后在`pure-site`中用Bower去链接`pure`，最后启动服务器：
 
 ```shell
 $ cd ../pure-site
@@ -45,22 +38,18 @@ $ bower link pure
 $ node server --pure-local
 ```
 
-The `--pure-local` flag is what will serve the Pure CSS locally instead of from
-the CDN.
+这个 `--pure-local` 参数表明这个网站将使用本地的Pure，而不是用CDN上的Pure
 
-**Note:** The steps to install the npm dependencies and link pure using Bower do
-*not* have to be run each time you start the server. Also, you can leave the
-server running and rebuild `pure` via `grunt` and you'll see the changes in your
-browser after refreshing!
+**注意：** 在你启动服务器的时候，安装包依赖（npm install）和用Bower去链接pure这两步操作，*不需要*每次都做。当然，你需要保持服务器一直在运行着，并且用`grunt`去重建`pure`，然后在浏览器刷新，你才能看到Pure的改变。
 
 
 [Bower]: http://bower.io/
 
 
-License
+LICENSE
 -------
 
-This software is free to use under the Yahoo! Inc. BSD license.
-See the [LICENSE file][] for license text and copyright information.
+这个软件在Yahoo的BSD许可证下，可免费使用。
+查看 [LICENSE file][] 的许可证信息和版权信息
 
 [LICENSE file]: https://github.com/yui/pure-site/blob/master/LICENSE.md
