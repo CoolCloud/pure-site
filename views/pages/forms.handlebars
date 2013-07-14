@@ -6,9 +6,9 @@
 
 <div class="content">
 
-    <h2 class="content-subhead">Default Form</h2>
+    <h2 class="content-subhead">默认表单</h2>
     <p>
-        To create a default inline form, add the {{code "pure-form"}} classname to any {{code "<form>"}} element.
+      给{{code "<form>"}}添加类名{{code "pure-form"}}，就可以创建一个默认的表单
     </p>
 
   {{#prefixIds "default"}}
@@ -20,9 +20,9 @@
   {{/code}}
 
 
-    <h2 class="content-subhead" id="stacked-form">Stacked Form</h2>
+    <h2 class="content-subhead" id="stacked-form">叠放式表单</h2>
     <p>
-        To create a stacked form with input elements below the labels, add the {{code "pure-form-stacked"}} classname to a {{code "<form>"}} element alongside {{code "pure-form"}}.
+        叠放式表单就是指input元素在标签下面，在默认表单的基础上，再添加一个类名{{code "pure-form-stacked"}}就可以实现。
     </p>
 
   {{#prefixIds "stacked"}}
@@ -34,9 +34,9 @@
   {{/code}}
 
 
-    <h2 class="content-subhead">Aligned Form</h2>
+    <h2 class="content-subhead">对齐式表单</h2>
     <p>
-        To create an aligned form, add the {{code "pure-form-aligned"}} classname to a {{code "<form>"}} element alongside {{code "pure-form"}}. In an aligned form, the labels are right-aligned against the form input controls, but on smaller screens revert to a <a href="#stacked-form">stacked form</a>.
+        在默认表单的基础上，增加一个类名{{code "pure-form-aligned"}}就可以实现对齐式表单。其中，标签是右对齐的，但在小屏幕上，看起来跟<a href="#stacked-form">叠放式表单</a>一样。
     </p>
 
   {{#prefixIds "aligned"}}
@@ -47,9 +47,9 @@
     {{> forms/aligned}}
   {{/code}}
 
-    <h2 class="content-subhead">Multi-Column Form (with Pure Grids)</h2>
+    <h2 class="content-subhead">多列表单(使用网格模块)</h2>
     <p>
-        To create multi-column forms, include your form elements within a <a href="{{pages.grids}}">Pure Grid</a>. The following example uses Pure Grids with a stacked form.
+      在一个<a href="{{pages.grids}}">网格</a>里面，包含表单元素就可以创建多列的表单了。下面就是一个应用了网格的例子：
     </p>
 
   {{#prefixIds "multi"}}
@@ -60,9 +60,9 @@
     {{> forms/multi}}
   {{/code}}
 
-    <h2 class="content-subhead">Grouped Inputs</h2>
+    <h2 class="content-subhead">分组</h2>
     <p>
-        To group sets of text-based input elements, wrap them in a {{code "<fieldset>"}} element with a {{code "pure-group"}} classname. Grouped inputs work well for sign-up forms and look natural on mobile devices.
+        把相关的文本说明和input元素用{{code "<fieldset>"}}元素包裹起来，然后再添加一个类名{{code "pure-group"}}，就可以把input元素分组。分组很适合应用在注册表单，且在移动设备表现得也不错。
     </p>
 
   {{#prefixIds "grouped"}}
@@ -74,9 +74,9 @@
   {{/code}}
 
 
-    <h2 class="content-subhead">Input Sizing</h2>
+    <h2 class="content-subhead">设置Input的大小</h2>
     <p>
-        Input elements have fluid width sizes in a syntax that is similar to <a href="{{pages.home}}">Pure Grids</a>. You can apply a {{code "pure-input-*"}} class to these elements.
+        你也可以给Input元素添加类名{{code "pure-input-*"}}，使它拥有流动的宽度，使用方法很像<a href="{{pages.home}}">Pure的网格</a>的使用。
     </p>
 
   {{#prefixIds "input-size"}}
@@ -88,7 +88,7 @@
   {{/code}}
 
     <p>
-        You can control input sizing even further by wrapping them in grid containers. In the example below, the {{code "<input>"}} elements have a {{code "pure-input-1"}} class, but are wrapped in a {{code "<div>"}} with a specific grid class.
+        你可以通过用一个网格容器包含{{code "<input>"}}元素，来控制它的大小。 如下例子 {{code "<input>"}}元素有一个类名为{{code "pure-input-1"}}但它是被一个有着特定网格类名的{{code "<div>"}}元素包含着。
     </p>
 
   {{#prefixIds "input-grid"}}
@@ -100,9 +100,9 @@
   {{/code}}
 
 
-    <h2 class="content-subhead">Required Inputs</h2>
+    <h2 class="content-subhead">必填的输入框</h2>
     <p>
-        To mark a form control as required, add the {{code "required"}} attribute.
+        增加{{code "required"}}属性，要求该输入框是必填的。
     </p>
 
   {{#prefixIds "invalid"}}
@@ -114,9 +114,9 @@
   {{/code}}
 
 
-    <h2 class="content-subhead">Disabled Inputs</h2>
+    <h2 class="content-subhead">禁用输入框</h2>
     <p>
-        To disable a form control, add the {{code "disabled"}} attribute.
+        增加一个{{code "disabled"}}的属性。
     </p>
 
   {{#prefixIds "disabled"}}
@@ -130,7 +130,7 @@
 
     <h2 class="content-subhead">Rounded Inputs</h2>
     <p>
-        To display a form control with rounded corners, add the {{code "pure-input-rounded"}} classname.
+        To display a form control with rounded corners, add the {{code "pure-input-rounded"}} classname.（没理解有什么用，翻译不了）
     </p>
 
   {{#prefixIds "rounded"}}
@@ -142,9 +142,9 @@
   {{/code}}
 
 
-    <h2 class="content-subhead">Checkboxes and Radios</h2>
+    <h2 class="content-subhead">复选框和单选按钮</h2>
     <p>
-        To normalize and align checkboxes and radio inputs, add the {{code "pure-checkbox"}} or {{code "pure-radio"}} classname.
+      给类名添加{{code "pure-checkbox"}}或者{{code "pure-radio"}}，可以让复选框和单选按钮排列整齐。
     </p>
 
   {{#prefixIds "checkbox-radio"}}
