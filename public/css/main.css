@@ -361,3 +361,6 @@ a.pure-button-primary {
         padding: 1.3em;
     }
 }
+.layout-hack{
+    margin-left: -1px;
+}
