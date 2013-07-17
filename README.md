@@ -14,8 +14,10 @@ Pure CSS 中文网站
 
 ```shell
 $ npm i
-$ node server
+$ node server.js
 ```
+
+PS:其实，下面的其实可以不用看了，安装好node环境就可以运行了。——by chensy0203
 
 ### 和Pure一起在本地运行
 
@@ -40,7 +42,7 @@ $ node server --pure-local
 
 这个 `--pure-local` 参数表明这个网站将使用本地的Pure，而不是用CDN上的Pure
 
-**注意：** 在你启动服务器的时候，安装包依赖（npm install）和用Bower去链接pure这两步操作，*不需要*每次都做。当然，你需要保持服务器一直在运行着，并且用`grunt`去重建`pure`，然后在浏览器刷新，你才能看到Pure的改变。
+**注意：** 在你启动服务器的时候，安装包依赖（npm install）和用Bower去链接pure这两步操作，**不需要** 每次都做。当然，你需要保持服务器一直在运行着，并且用`grunt`去重建`pure`，然后在浏览器刷新，你才能看到Pure的改变。
 
 
 [Bower]: http://bower.io/
