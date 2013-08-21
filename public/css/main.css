@@ -1,7 +1,9 @@
 body {
-    font-family: "Microsoft Yahei", Arial, Helvetica, sans-serif;
+    font-family: Arial;
     color: #777;
 }
+.pure-g{letter-spacing:-.55em; } 
+.pure-g-r {letter-spacing:-.55em; } 
 
 
 /* Add transition to containers so they can push in and out */
@@ -171,9 +173,6 @@ aside {
     background: rgb(250, 250, 250);
 }
 
-    .legal>div{
-        margin-right: -1px;
-    }
     .legal-license,
     .legal-copyright {
         margin: 0;
@@ -360,7 +359,4 @@ a.pure-button-primary {
     .l-hbox {
         padding: 1.3em;
     }
-}
-.layout-hack{
-    margin-left: -1px;
 }

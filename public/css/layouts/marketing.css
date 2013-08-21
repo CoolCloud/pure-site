@@ -6,6 +6,7 @@
 
 body {
     margin: 0 auto;
+    font-family: Arial;
     line-height: 1.7em;
 }
 
@@ -86,5 +87,3 @@ body .primary-button {
     font-size: 80%;
 }
 
-.pure-u-2-3{margin-left: -4px;}
-.pure-u-1-4{margin-left: -3px;}
