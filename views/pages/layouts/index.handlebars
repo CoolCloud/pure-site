@@ -1,0 +1,55 @@
+{{setTitle     "布局"}}
+{{setSubTitle  "用这些例子的布局，快速开始你的下一个web项目"}}
+{{setActiveNav "layouts"}}
+
+{{addLocalCSS "/css/layouts.css"}}
+
+{{> header}}
+
+<div class="content">
+    {{sectionHeading "常见的布局"}}
+    <p>
+        Pure的目标，是希望Pure能够适应到每一个web项目上。为了证明这一点，我们已经制作了一些使用Pure的常见布局。这些布局不需要写任何的javascript就可以实现响应式效果。
+    </p>
+
+    <aside>
+        <p>
+            当你浏览这些布局的时候，你可以查看或者复制它的源码自己实现一下，这样就可以更好地理解这些布局是怎么实现的。
+        </p>
+    </aside>
+
+  {{#each layouts}}
+    <div class="layout-item pure-g-r {{name}}">
+        <div class="layout-item-screenshot pure-u-1-2">
+            <div class="l-hbox">
+                <a href="{{pathTo 'layout' layout=name}}">
+                    <img src="/img/layouts/{{name}}@2x.jpg" class="bordered" width="400" height="214"
+                         alt="{{label}}例子的布局">
+                </a>
+            </div>
+        </div>
+
+        <div class="layout-item-content pure-u-1-2">
+            <div class="l-hbox">
+                <h3 class="layout-item-head">{{label}}</h3>
+                <p>{{description}}</p>
+
+              {{#if tags}}
+                <ul class="layout-item-modules pure-g">
+                  {{#each tags}}
+                    <li class="layout-item-module layout-item-module-{{.}} pure-u">
+                        <a href="{{pathTo .}}">{{.}}</a>
+                    </li>
+                  {{/each}}
+                </ul>
+              {{/if}}
+
+                <p>
+                    <a href="{{pathTo 'layout' layout=name}}"
+                       class="pure-button pure-button-primary">查看布局</a>
+                </p>
+            </div>
+        </div>
+    </div>
+  {{/each}}
+</div>

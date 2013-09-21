@@ -1,40 +1,67 @@
-{{setTitle     "响应式的网格"}}
+{{setTitle     "网格"}}
 {{setSubTitle  "一个完全可定制的响应式网格"}}
 {{setActiveNav "grids"}}
+
+{{addLocalCSS "/css/grids.css"}}
 
 {{> header}}
 
 <div class="content">
 
-    <h2 class="content-subhead">怎么使用Pure的网格？</h2>
-    <p>
-        Pure的Grids非常容易使用。代码<code>pure-g</code>可以表示一行或者一个网格（grid，g来源于此），而{{code "pure-u-*-*"}}表示列或者单元格（unit，u来源于此）。每个{{code "pure-g"}}能够包含许多单元格。单元格可以通过一个变化的类名来表示它所占用的宽度。举个例子，{{code "pure-u-1-2"}}表示宽度为50%，{{code "pure-u-1-5"}}表示宽度为20%。
-    </p>
+    {{sectionHeading "怎么使用Pure的网格？"}}
 
     <p>
-        注意，Pure的所有单元格（unit）必须被网格（grid）包含。直接点说，如果有一个元素的类名为{{code "pure-u-*"}}，那么它的父元素的类名要求必须是{{code "pure-g"}}或者是{{code "pure-g-r"}}（关于pure-g-r，请见下文）。这里有一个例子，把一个网格分成三列：
+        只要你把下面的几个简单的概念记住，Pure的网格将使用起来非常容易。
     </p>
 
-  {{#code}}
-    {{> grids/intro}}
-  {{/code}}
+    <dl>
+        <dt>“网格”类和“单元格”类</dt>
+        <dd>
+            Pure的网格包含两种类：“网格”类，({{code "pure-g"}}或者{{code "pure-g-r"}}) ；“单元格”类 ，({{code "pure-u"}} 或者 {{code "pure-u-*"}})
+        </dd>
+
+        <dt>单元格的宽度是通过分数来表示的</dt>
+        <dd>
+            单元格有可变的类名去表示它们的宽度。举个例子，{{code "pure-u-1-2"}}表示宽度占50%，而{{code "pure-u-1-5"}}将表示宽度占20%.
+        </dd>
+
+        <dt>一个网格的所有子元素都必须是单元格</dt>
+        <dd>
+            类名为{{code "pure-g"}}的元素的子元素必须包含类名{{code "pure-u"}}或者{{code "pure-u-*"}}。
+        </dd>
+
+        <dt>单元格的内容<dt>
+        <dd>
+            
+            被单元格所包含的内容才能确保被渲染出来。也就是说，所有可见的内容都必须包含在单元格里面。
+        </dd>
+    </dl>
 
     <aside>
         <p>
-            需要更详细的使用说明，请在YUI的网站上查看<a href="http://yuilibrary.com/yui/docs/cssgrids/">CSS网格文档</a>。
+            如果你在你的项目里面使用了定制字体，请先查看下这一部分<a href="#using-grids-with-custom-fonts">在网络中使用定制字体</a>。
         </p>
     </aside>
 
-
-    <h2 class="content-subhead">怎么使用Pure的响应式网格？</h2>
     <p>
-        Pure的响应式网格是建立在已有的网格的基础上的，它只是简单地添加了一个新的类名{{code "pure-g-r"}}，其中“r”表示响应式（responsive）。你只要简单用{{code "pure-g-r"}}替换掉{{code "pure-g"}}，所有类名为{{code "pure-u-*-*"}}的元素都会自动变成响应式的了。
+        现在开始一个简单的例子。这里有三列：
     </p>
 
+    {{#code}}
+    {{> grids/intro}}
+    {{/code}}
 
-    <h2 class="content-subhead">HTML代码</h2>
+
+    {{sectionHeading "响应式的网格"}}
+
     <p>
-        第一个片段的代码是用Pure的普通网格写的，它们没有响应式功能，每一列的宽度总是占三分之一，宽度不会随屏幕的变化而变化。第二个片段，只是在第一个片段的基础上，把{{code "pure-g"}}替换为{{code "pure-g-r"}}，从而就使得它在小屏幕上，每一列的宽度会被破坏，扩展到占满屏幕的宽度。
+        Pure的响应式网格是建立在已有的网格的基础上的，它只是简单地添加了一个新的类名{{code "pure-g-r"}}，其中“r”表示响应式（responsive）。你只要简单用{{code "pure-g-r"}}替换掉{{code "pure-g"}}，所有类名为{{code "pure-u-*-*"}}的元素都会自动变成响应式的了，当视图的宽度不大于{{code "767px"}}的时候，这些元素的宽度都会变成{{code "width: 100%;"}}。
+    </p>
+
+    <h3>非响应式网格与响应式网格</h3>
+
+    <p>
+        下面的第一个代码片段展示的是普通网格，没有响应式的，无论屏幕的宽度怎么变化，他们总是分成三列。第二个代码片段只是把类名{{code "pure-g"}}替换为{{code "pure-g-r"}}，然后就有响应式的效果，当屏幕宽度小于{{code "767px"}}的时候，下面的每一列的宽度就会变成{{code "width: 100%;"}}
     </p>
 
     {{#code}}
@@ -45,23 +72,64 @@
     {{> grids/compare-r}}
     {{/code}}
 
-    <h2 class="content-subhead">功能</h2>
+    <h3>响应式网格的一个例子</h3>
 
-    <ul class="content-spaced">
-        <li>配置不同媒体的屏幕大小（桌面，平板，手机等）</li>
-        <li>如果元素小于一个合适的宽度（默认是767px），元素的宽度占满100%</li>
-        <li>调整图片以适应小屏幕</li>
-        <li>可以设置任意数量的列</li>
-        <li>支持可配制的前缀，方便扩展</li>
-    </ul>
-
-
-    <h2 class="l-centered">实际体验下</h2>
-    <h3 class="l-centered">调整页面的大小，可以看到网格变形了</h3>
+    <p>
+        调整页面的大小，可以看到网格变形了
+    </p>
 
     {{> grids/four-col}}
 
-    <h2 class="content-subhead">给单元格添加内边距和边框</h2>
+
+    {{sectionHeading "移动设备上的网格"}}
+
+    <p>
+        使用类名{{code "pure-g"}}去替换{{code "pure-g-r"}}就可以保证单元格在小屏幕不会被破坏。
+    </p>
+
+    {{> grids/mobile-col}}
+
+
+    {{sectionHeading "网格辅助类名"}}
+
+    <p>
+        Pure的响应式网格，可以通过以下的辅助类名去实现不同屏幕宽度上是否显示或者隐藏相关的内容。
+    </p>
+
+    <table class="pure-table pure-table-bordered">
+        <thead>
+            <tr>
+                <th>辅助类名</th>
+                <th>描述</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+                <td>{{code "pure-hidden-phone"}}</td>
+                <td>
+                    当屏幕宽度小于 {{code "768px"}}的时候，标记了这个类名的内容就会被隐藏。
+                </td>
+            </tr>
+
+            <tr>
+                <td>{{code "pure-hidden-tablet"}}</td>
+                <td>
+                    当屏幕宽度在{{code "768px"}}和{{code "979px"}}之间的时候，标记了这个类名的内容就会被隐藏。
+                </td>
+            </tr>
+
+            <tr>
+                <td>{{code "pure-hidden-desktop"}}</td>
+                <td>
+                    当屏幕宽度大于{{code "980px"}}的时候，标记了这个类名的内容就会被隐藏。
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+
+    {{sectionHeading "给单元格添加内边距和边框"}}
 
     <p>
         给单元格添加内边距和边框有两种方法：一种是在每一个单元格里面再嵌套一个{{code "<div>"}}元素，然后直接给这个元素设置样式。
@@ -72,7 +140,7 @@
     {{/code}}
 
     <p>
-       另一个方法是直接给每一个单元格设置样式，这有可能会破坏布局，但是你可以通过设置单元格样式为{{code "box-sizing: border-box"}}，来避免这问题： 
+        另一个方法是直接给每一个单元格设置样式，这有可能会破坏布局，但是你可以通过设置单元格样式为{{code "box-sizing: border-box"}}，来避免这问题：
     </p>
 
     {{#code}}
@@ -80,29 +148,35 @@
     {{/code}}
 
     <p>
-        使用 {{code "box-sizing: border-box"}}可以保持标记的简洁，但有两个缺点：一个是，古老的浏览器（如IE7及IE7以下）不支持{{code "box-sizing"}},另一个是，所有的单元格都设置了属性，以后就很难覆盖和取消。但这些不是问题，Pure保持{{code "box-sizing"}}的默认值为{{code "content-box"}}，这样你就可方便地覆盖或者取消了。
+        使用 {{code "box-sizing: border-box"}}可以保持标记的简洁，但有两个缺点：一个是，古老的浏览器（如IE7及IE7以下）对{{code "box-sizing"}}<a href="http://caniuse.com/#search=box-sizing">支持不好</a>,另一个是，所有的单元格都设置了属性，以后就很难覆盖和取消。这里Pure保持{{code "box-sizing"}}的默认值为{{code "content-box"}}，让你能自主选择喜欢的方式。
     </p>
 
-    <h2 class="content-subhead">移动设备上的网格</h2>
+
+    {{sectionHeading "在网格中使用定制的字体"}}
+
     <p>
-        使用类名{{code "pure-g"}}，而不是使用{{code "pure-g-r"}}，可以保证在小屏幕上，网格不会被破坏，如下：
+        Pure的网格使用特殊的字体栈来确保OS浏览器的兼容性，默认的网格单元格将设置{{code "font-family: sans-serif;"}}——这是Pure的基本模块(Normalize.css)对{{code "<body>"}}设置的默认字体栈。幸运的是，不需要覆盖{{code "<body>"}}元素的字体栈，你就可以很容易地让你的定制字体在网格中生效，类似下面的用法：
     </p>
-
-    {{> grids/mobile-col}}
-
-
-      <h2 class="content-subhead">只想使用网格这一模块？</h2>
-      <p>
-          网格只是Pure的CSS文件中的一部分，如果你只要网格，而不需要其他模块，你可以把它分离出来，只要在{{code "<head>"}}标签里面，用{{code "<link>"}}标签引入就可以了。
-      </p>
 
     {{#code}}
-      <link rel="stylesheet" href="http://yui.yahooapis.com/pure/{{pure_version}}/grids-min.css">
+    {{> grids/custom-font}}
     {{/code}}
 
-      <aside>
-          <p>
-              此外，你也可以使用<a href="http://yui.github.io/gridbuilder/">网格生成器</a>去定制你自己的网格，然后导出CSS文件就可以了!
-          </p>
-      </aside>
+
+    {{sectionHeading "只想使用网格这一模块？"}}
+
+    <p>
+         网格只是Pure的CSS文件中的一部分，如果你只要网格，而不需要其他模块，你可以把它分离出来，只要在{{code "<head>"}}标签里面，用{{code "<link>"}}标签引入就可以了。
+    </p>
+
+  {{#code}}
+    <link rel="stylesheet" href="http://yui.yahooapis.com/pure/{{pure_version}}/grids-min.css">
+  {{/code}}
+
+    <aside>
+        <p>
+            此外，你也可以使用<a href="http://yui.github.io/gridbuilder/">网格生成器</a>去定制你自己的网格，然后导出CSS文件就可以了!
+        </p>
+    </aside>
+
 </div>

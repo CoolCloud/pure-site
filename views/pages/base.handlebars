@@ -1,11 +1,11 @@
 {{setTitle     "基础模块"}}
-{{setSubTitle  "基于Normalize.css，为HTML5准备的样式重置"}}
+{{setSubTitle  "基于Normalize.css，一个为HTML5准备的css重置的选择之一"}}
 {{setActiveNav "base"}}
 
 {{> header}}
 
 <div class="content">
-    <h2 class="content-subhead">基础架构</h2>
+    {{sectionHeading "基础架构"}}
     <p>
         Pure的所有模块都是基于<a href="http://necolas.github.com/normalize.css/">Normalize.css</a>。Normalize能在一定程度上解决跨浏览器的一致性问题。我们使用的Normalize的版本是1.x，因为这个版本能够支持旧的IE浏览器。我们很喜欢Normalize，所以我们把它放到我们的CDN上了，为了引入Normalize，你可以把这个链接{{code "<link>"}}加入你的页面上：
     </p>
@@ -20,20 +20,20 @@
     </p>
 
     <blockquote class="content-quote">
-    Normalize.css是一个小巧的CSS文件，提供样式重置功能，使各浏览器的HTML元素的默认样式一致。这是一个现代的，为HTML5准备的，替代传统样式的css重置文件。
+        Normalize.css是一个小巧的CSS文件，提供样式重置功能，使各浏览器的HTML元素的默认样式一致。这是一个现代的，为HTML5准备的，替代传统样式的css重置文件。
     </blockquote>
 
     <p>
         Normalize.css提供了<a href="https://github.com/necolas/normalize.css/wiki">丰富的文档说明</a>和一个<a href="http://nicolasgallagher.com/about-normalize-css/">全面的指南</a>去解释它是跟传统的样式重置有何不同。你可以看看YUI的<a href="http://yuilibrary.com/yui/docs/cssnormalize/">CSSNormalize</a>模块，它包括了一个随着<a href="http://yuilibrary.com/yui/docs/cssnormalize/#context">上下文版本</a>变化的通用的Normalize。上下文版本的Normalize只对带有{{code "yui3-normalized"}}的类名的元素的子元素有效。
     </p>
 
-    <h2 class="content-subhead">印刷样式</h2>
+    {{sectionHeading "印刷样式"}}
     <p>
         为了保持Pure的小巧与可扩展性，除了由基础层Normalize提供的印刷样式外，我们没有添加任何的样式，这意味着你只能使用不同大小的标题，引用文字，列表，定义列表等等的样式，但是你可以很容易的重写这些样式。
     </p>
+    
 
-
-    <h2 class="content-subhead">标题（h1,h2,h3,h4,h5,h6）</h2>
+    {{sectionHeading "标题（h1,h2,h3,h4,h5,h6）"}}
     <p>
         从标题1到标题6，字体大小，不断减小，定义字体大小的单位是{{code "em"}}.
     </p>
@@ -41,7 +41,7 @@
     {{> base/headings}}
 
 
-    <h2 class="content-subhead">列表（ul,ol,dl）</h2>
+    {{sectionHeading "列表（ul,ol,dl）"}}
     <p>
         以不同的形式显示列表。有无序列表、有序列表、和定义列表。Normalize提供基本的样式，并且让它们在不同的浏览器保证一致性。你可以在你的应用里重写这些样式。如果你想要用这些列表去实现菜单，你可以去看看Pure的<a href="{{pages.menus}}">菜单模块</a>。
     </p>
@@ -49,7 +49,7 @@
     {{> base/lists}}
 
 
-    <h2 class="content-subhead">引用块（blockquote）</h2>
+    {{sectionHeading "引用块（blockquote）"}}
     <p>
         引用块包含的文本表示引用文字，默认情况下，引用文字看起来只是一些带缩进的普通文本，这样你就可以很自由的设置自己的样式，这是默认的样式:
     </p>
@@ -69,7 +69,7 @@
     </blockquote>
 
 
-    <h2 class="content-subhead">缩写（abbr）</h2>
+    {{sectionHeading "缩写（abbr）"}}
     <p>
         这个元素{{code "<abbr>"}}表示一个缩写。如果给这个元素添加一个{{code "title"}}属性，这个标题会在hover的时候显示出来，缩写一般都有一个虚线的下划线。
     </p>
@@ -81,7 +81,7 @@
   {{/code}}
 
 
-    <h2 class="content-subhead">地址（address）</h2>
+    {{sectionHeading "地址（address）"}}
     <p>
         这个标签{{code "<address>"}}是用来定义文档作者或拥有者的联系信息。默认情况下，地址标签没有特殊的样式，但是通过Normalize，它们能够用各种行内的样式显示出来。
     </p>
@@ -93,7 +93,7 @@
   {{/code}}
 
 
-    <h2 class="content-subhead">行内样式</h2>
+    {{sectionHeading "行内样式"}}
     <p>
         还有很多其他的行内样式可以使用，这里是<a href="http://github.com/necolas/normalize.css">Normalize的文档</a>提供的例子:
     </p>
@@ -101,7 +101,7 @@
     {{> base/inline}}
 
 
-    <h2 class="content-subhead">超越Normalize</h2>
+    {{sectionHeading "超越Normalize"}}
     <p>
         Normalize.css只是你的项目的一个起点，提供最基本的样式重置功能，但是一些HTML元素，比如表单、表格和菜单就需要更多、更丰富的样式。
     </p>

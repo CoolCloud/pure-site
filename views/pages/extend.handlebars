@@ -14,12 +14,12 @@
 
     <aside>
         <p>
-            想要快速开始吗？你可以看下<a href="{{pages.layouts}}">布局模块</a>，我们已经提供了一些例子。
+            想要快速开始吗？你可以看下<a href="{{pathTo 'layouts'}}">布局模块</a>，我们已经提供了一些例子。
         </p>
     </aside>
 
 
-    <h2 class="content-subhead">样式指导</h2>
+    {{sectionHeading "样式指导"}}
 
     <h3>基于SMACSS</h3>
     <p>
@@ -32,7 +32,7 @@
     </p>
 
     <p>
-        举个例子，我们看下<a href="{{pages.forms}}">叠放式表单</a>的HTML和CSS:
+        举个例子，我们看下<a href="{{pathTo 'forms'}}">叠放式表单</a>的HTML和CSS:
     </p>
 
     <h4>叠放式表单：HTML</h4>
@@ -64,7 +64,7 @@
 {{/code}}
 
 
-    <h2 class="content-subhead">扩展 Pure</h2>
+    {{sectionHeading "扩展 Pure"}}
     <p>
         如果你想要扩展Pure，我们建议你遵守以下的约定。举个例子，如果你给表单创建了新的类型，你的HTML和CSS最好跟下面的样式类似：
     </p>
@@ -81,10 +81,10 @@
 {{/code}}
 
     <p>
-        如果你想让你的按钮看起来很不一样，你可以看下<a href="{{pages.buttons}}">按钮模块</a>，这里有一些例子教你怎样采用模块化的结构去定制按钮的大小和样式。
+        如果你想让你的按钮看起来很不一样，你可以看下<a href="{{pathTo 'buttons'}}">按钮模块</a>，这里有一些例子教你怎样采用模块化的结构去定制按钮的大小和样式。
     </p>
 
-    <h2 class="content-subhead">使用皮肤编辑器</h2>
+    {{sectionHeading "使用皮肤编辑器"}}
 
     <p>
         <a href="http://yui.github.io/skinbuilder/?mode=pure">皮肤编辑器</a>是一种不需要写CSS就可以定制Pure样式的很好的工具。首先，需要选择一种简单的颜色，就可以马上看到Pure的所有组件都换了颜色。然后，你把生成的CSS复制粘贴到你的样式文件里面，就可以了。
@@ -95,22 +95,7 @@
     </p>
 
 
-    <h2 class="content-subhead">基于Pure创建模块</h2>
-
-    <p>
-        下面是基于Pure的第三方模块
-    </p>
-
-    <dl>
-        <dt><a href="http://tilomitra.github.io/csstypography/">Typography</a></dt>
-        <dd>一种简单的排版样式</dd>
-
-        <dt><a href="http://tilomitra.github.io/cssextras/">扩展</a></dt>
-        <dd>简单的图片、缩略图、标签、上下文菜单和警告</dd>
-    </dl>
-
-
-    <h2 class="content-subhead">Pure + Bootstrap + JavaScript</h2>
+    {{sectionHeading "Pure + Bootstrap + JavaScript"}}
 
     <p>
         Pure可以和其他库一起使用，比如Bootstrap和jQuery。做为一个开发者，你可以把Pure做为基础的CSS框架，然后在你的应用需要的地方，引入特定的Bootstrap和jQuery模块，这样做有几个好处：
@@ -139,5 +124,6 @@
     </p>
 
     {{> extend/modal}}
+
 
 </div>

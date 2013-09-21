@@ -1,27 +1,32 @@
 <a href="#menu" id="menuLink" class="pure-menu-link">
-    <img src="/img/navicon-png2x.png" width="20"
-         alt="Menu toggle">
+    <span></span>
 </a>
 
 <div class="pure-u" id="menu">
     <div class="pure-menu pure-menu-open">
-        <a class="pure-menu-heading" href="{{pages.home}}">Pure</a>
+        <a class="pure-menu-heading" href="{{pathTo 'home'}}">Pure</a>
 
         <ul>
           {{#each nav}}
             <li class="{{#if isActive}}pure-menu-selected{{/if}} {{#if divider}}menu-item-divided{{/if}}">
-                <a href="{{url}}">{{label}}</a>
+                <a href="{{pathTo name}}">{{label}}</a>
             </li>
           {{/each}}
+
             <li>
-                <a target="_blank" href="https://github.com/yui/pure/releases">发布</a>
-            </li>
-            <li class="menu-item-divided">
-                <a target="_blank" href="http://yui.github.io/skinbuilder/?mode=pure">皮肤编辑器</a>
+                <a href="http://blog.purecss.io/">Pure博客</a>
             </li>
 
             <li>
-                <a target="_blank" href="http://yuilibrary.com/">YUI库</a>
+                <a href="https://github.com/yui/pure/releases/">最新版本</a>
+            </li>
+
+            <li class="menu-item-divided">
+                <a href="http://yui.github.io/skinbuilder/?mode=pure">皮肤编辑器</a>
+            </li>
+
+            <li>
+                <a href="http://yuilibrary.com/">YUI库</a>
             </li>
         </ul>
     </div>

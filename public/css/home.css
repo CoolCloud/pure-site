@@ -1,11 +1,11 @@
-p {
-    line-height: 1.6em;
-}
-
 .hero {
     text-align: center;
-    margin: 8em 0 3em;
+    margin: 6em auto 3em;
 }
+    .hero-titles {
+        font-family: "omnes-pro", sans-serif;
+        padding: 0 2em;
+    }
     .hero h1 {
         font-size: 800%;
         margin: 0;
@@ -23,6 +23,8 @@ p {
 .hero-cta pre {
     padding: 1em;
     font-size: 100%;
+    border-left: 0;
+    border-right: 0;
 }
 
 a.pure-button-cta,
@@ -52,7 +54,6 @@ a.pure-button-secondary {
         -webkit-box-sizing: border-box;
         -moz-box-sizing: border-box;
         box-sizing: border-box;
-        margin-right: -1px;
     }
 
     .size-chart-base {
@@ -116,13 +117,16 @@ a.pure-button-secondary {
     padding: 1em 0;
 }
 
+    .marketing-ribbon .content {
+        margin-bottom: 0;
+    }
     .marketing-ribbon h3 {
         font-size: 1.47em;
         font-weight: normal;
     }
-
-    .marketing-ribbon .pure-u-1-3{
-        margin-left:-1px;
+    .marketing-ribbon p {
+        font-size: 1.125em;
+        line-height: 1.6em;
     }
 
 .sample-buttons .pure-button {
@@ -187,9 +191,11 @@ a.pure-button-secondary {
 
 @media (max-width: 767px) {
     .hero {
-        margin: 2em 0 1.5em;
-        padding: 0.6em;
+        margin: 2em 0 auto;
     }
+        .hero-titles {
+            padding: 0 1em;
+        }
         .hero h1 {
             font-size: 250%;
             font-weight: 300; /* slightly thicker to compensate for font-size */

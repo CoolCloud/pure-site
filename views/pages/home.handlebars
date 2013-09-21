@@ -5,55 +5,58 @@
 {{addLocalCSS "/css/home.css"}}
 
 <div class="hero">
-    <h1 class="pure-u-1">{{title}}</h1>
-    <h2 class="pure-u-3-4 l-centered">{{subTitle}}</h2>
+    <div class="hero-titles">
+        <h1>{{title}}</h1>
+        <h2>{{subTitle}}</h2>
+    </div>
 
-    <div class="hero-cta pure-u-3-4">
-    {{#code}}
+    <div class="hero-cta">
+      {{#code}}
         <link rel="stylesheet" href="http://yui.yahooapis.com/pure/{{pure_version}}/pure-min.css">
-    {{/code}}
+      {{/code}}
 
-    <p>
-        <a class="pure-button pure-button-cta" href="{{pages.customize}}">开始定制</a>
-        <a class="pure-button pure-button-secondary" href="https://github.com/yui/pure/">查看源码</a>
-    </p>
+        <p>
+            <a class="pure-button pure-button-cta" href="{{pathTo 'customize'}}">开始定制</a>
+            <a class="pure-button pure-button-secondary" href="https://github.com/yui/pure/">查看源码</a>
+        </p>
     </div>
 </div>
 
-<div class="pure-g-r marketing-ribbon">
-    <div class="pure-u-1">
-        <div class="size-chart l-vbox pure-g">
-            <div class="size-chart-item size-chart-base pure-u" style="width: {{filePercent 'base'}};">
-                <a class="size-chart-label" href="{{pages.base}}">
-                    基本模块 <span class="size-chart-size">{{fileSize "base"}}</span>
-                </a>
-            </div>
-            <div class="size-chart-item size-chart-grids pure-u" style="width: {{filePercent 'grids'}};">
-                <a class="size-chart-label" href="{{pages.grids}}">
-                    网格模块 <span class="size-chart-size">{{fileSize "grids"}}</span>
-                </a>
-            </div>
-            <div class="size-chart-item size-chart-forms pure-u" style="width: {{filePercent 'forms'}};">
-                <a class="size-chart-label" href="{{pages.forms}}">
-                    表单模块 <span class="size-chart-size">{{fileSize "forms"}}</span>
-                </a>
-            </div>
-            <div class="size-chart-item size-chart-buttons pure-u" style="width: {{filePercent 'buttons'}};">
-                <a class="size-chart-label" href="{{pages.buttons}}">
-                    按钮模块 <span class="size-chart-size">{{fileSize "buttons"}}</span>
-                </a>
-            </div>
-            <div class="size-chart-item size-chart-tables pure-u" style="width: {{filePercent 'tables'}};">
-                <a class="size-chart-label" href="{{pages.tables}}">
-                    表格模块 <span class="size-chart-size">{{fileSize "tables"}}</span>
-                </a>
-            </div>
-            <div class="size-chart-item size-chart-menus pure-u" style="width: {{filePercent 'menus'}};">
-                <a class="size-chart-label" href="{{pages.menus}}">
-                    菜单模块 <span class="size-chart-size">{{fileSize "menus"}}</span>
-                </a>
-            </div>
+<div class="marketing-ribbon">
+    <div class="size-chart l-vbox pure-g">
+        <div class="size-chart-item size-chart-base pure-u" style="width: {{filePercent 'base'}};">
+            <a class="size-chart-label" href="{{pathTo 'base'}}">
+                基本模块 <span class="size-chart-size">{{fileSize "base"}}</span>
+            </a>
         </div>
+        <div class="size-chart-item size-chart-grids pure-u" style="width: {{filePercent 'grids'}};">
+            <a class="size-chart-label" href="{{pathTo 'grids'}}">
+                网格模块 <span class="size-chart-size">{{fileSize "grids"}}</span>
+            </a>
+        </div>
+        <div class="size-chart-item size-chart-forms pure-u" style="width: {{filePercent 'forms'}};">
+            <a class="size-chart-label" href="{{pathTo 'forms'}}">
+                表单模块 <span class="size-chart-size">{{fileSize "forms"}}</span>
+            </a>
+        </div>
+        <div class="size-chart-item size-chart-buttons pure-u" style="width: {{filePercent 'buttons'}};">
+            <a class="size-chart-label" href="{{pathTo 'buttons'}}">
+                按钮模块 <span class="size-chart-size">{{fileSize "buttons"}}</span>
+            </a>
+        </div>
+        <div class="size-chart-item size-chart-tables pure-u" style="width: {{filePercent 'tables'}};">
+            <a class="size-chart-label" href="{{pathTo 'tables'}}">
+                表格模块 <span class="size-chart-size">{{fileSize "tables"}}</span>
+            </a>
+        </div>
+        <div class="size-chart-item size-chart-menus pure-u" style="width: {{filePercent 'menus'}};">
+            <a class="size-chart-label" href="{{pathTo 'menus'}}">
+                菜单模块 <span class="size-chart-size">{{fileSize "menus"}}</span>
+            </a>
+        </div>
+    </div>
+
+    <div class="content">
         <div class="l-box">
             <h3>很小的CSS</h3>
             <p>
@@ -82,6 +85,7 @@
             <h3>可在移动设备上使用</h3>
             <p>
                 Pure是响应式的，所以能适应各种屏幕大小的设备。你可以通过<a href="http://yui.github.io/skinbuilder/?mode=pure">皮肤编辑器</a>去定制你自己的样式</p>
+            </p>
         </div>
     </div>
 
@@ -99,7 +103,7 @@
 <div class="pure-g-r marketing-ribbon">
     <div class="pure-u-1-2">
         <div class="l-box">
-            <a href="{{pages.layouts}}">
+            <a href="{{pathTo 'layouts'}}">
                 <img src="img/layout-icon.jpg" alt="Diagram of a sample layout.">
             </a>
         </div>
@@ -109,11 +113,11 @@
         <div class="l-hbox">
             <h3>创建响应式布局</h3>
             <p>
-                通过使用<a href="{{pages.grids}}">网格模块</a>, <a href="{{pages.menus}}">菜单模块</a>等，你可以很简单地在所有大小的屏幕上创建漂亮的响应式布局。你可以查看<a href="{{pages.layouts}}">布局模块</a>，用它你可以很快地开始你的项目，给你的项目打造一个很好的基础。
+                通过使用<a href="{{pathTo 'grids'}}">网格模块</a>, <a href="{{pathTo 'menus'}}">菜单模块</a>等，你可以很简单地在所有大小的屏幕上创建漂亮的响应式布局。你可以查看<a href="{{pathTo 'layouts'}}">布局模块</a>，用它你可以很快地开始你的项目，给你的项目打造一个很好的基础。
             </p>
 
             <p>
-                <a href="{{pages.layouts}}" class="pure-button">查看布局模块</a>
+                <a href="{{pathTo 'layouts'}}" class="pure-button">查看布局模块</a>
             </p>
         </div>
     </div>
@@ -124,10 +128,11 @@
         <div class="l-hbox">
             <h3>设计你自己的样式</h3>
             <p>
-                跟其他框架相比，Pure的设计会让你更容易添加新的css规则去重写已经存在的规则。只需添加几行CSS代码，你就可以把你重写Pure的样式，展示到你的网站上。</p>
+                跟其他框架相比，Pure的设计会让你更容易添加新的css规则去重写已经存在的规则。只需添加几行CSS代码，你就可以把你重写Pure的样式，展示到你的网站上。
+            </p>
 
             <p>
-                <a href="{{pages.extend}}" class="pure-button">扩展 Pure</a>
+                <a href="{{pathTo 'extend'}}" class="pure-button">扩展Pure</a>
             </p>
         </div>
     </div>

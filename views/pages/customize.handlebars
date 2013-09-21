@@ -6,35 +6,63 @@
 
 <div class="content">
 
-    <h2 class="content-subhead">所有模块</h2>
+    {{sectionHeading "Rollups"}}
     <p>
-        Pure的所有模块有两种模式，一种有响应式的，一种是非响应式的，你需要在你的项目中选择一个合适的。
+        Rollups都包含了pure的所有模块，但Rollups有两种模式，一种响应式的，一种是非响应式的，你需要在你的项目中选择一个合适的版本。
     </p>
 
     <table class="pure-table pure-table-bordered">
         <thead>
             <tr>
                 <th>名称</th>
-                <th>CSS 链接</th>
+                <th>链接</th>
                 <th>大小(压缩后的)</th>
             </tr>
         </thead>
         <tbody>
             <tr>
-                <td>响应式的</td>
+                <td>响应式的Rollup</td>
                 <td>http://yui.yahooapis.com/pure/{{pure_version}}/pure-min.css</td>
                 <td>{{fileSize "pure"}}</td>
             </tr>
             <tr>
-                <td>非响应式的</td>
+                <td>非响应式的Rollup</td>
                 <td>http://yui.yahooapis.com/pure/{{pure_version}}/pure-nr-min.css</td>
                 <td>{{fileSize "pure-nr"}}</td>
             </tr>
         </tbody>
     </table>
 
+    <h3>可选的CDNs</h3>
+    <p>
+        Pure的主机是雅虎的CDN。你可以通过一个简单的合并请求把Pure的各个独立的模块组合到一起。你也可以单独使用这些模块。下面表格列出的是Pure其他可选的CDN。
+    </p>
 
-    <h2 class="content-subhead">单独模块</h2>
+    <table class="pure-table pure-table-bordered">
+        <thead>
+            <tr>
+                <th>CDN</th>
+                <th>链接</th>
+                <th>是否支持HTTPS</th>
+                <th>是否支持组合请求</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><a href="http://cdnjs.com/">cdnjs</a></td>
+                <td>//cdnjs.cloudflare.com/ajax/libs/pure/{{pure_version}}/pure-min.css</td>
+                <td>Yes</td>
+                <td>No</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <p>
+        <b>注意：</b> 如果以上可选的CDN没有提供Pure的最新版本，请联系他们，让他们更新最新版本的Pure<b>{{pure_version}}</b>.
+    </p>
+
+
+    {{sectionHeading "单独模块"}}
     <p>
         你也可以单独使用这些模块。雅虎提供了CDN支持，支持把请求的各个模块合并成一个独立的CSS文件返回。这里有一个合并模块的URL的例子，合并<a href="{{pages.base}}">基础模块</a>，<a href="{{pages.grids}}">网格模块</a>和<a href="{{pages.forms}}">表单模块</a>：
     </p>
@@ -47,7 +75,7 @@
         <thead>
             <tr>
                 <th>名称</th>
-                <th>CSS链接</th>
+                <th>链接</th>
             </tr>
         </thead>
         <tbody>
@@ -90,7 +118,7 @@
         </tbody>
     </table>
 
-    <h2 class="content-subhead">皮肤</h2>
+    {{sectionHeading "皮肤"}}
     <p>
         Pure只提供最简洁的样式，允许你去定制自己样式。如果你想要开发一个主题，<a href="https://git.corp.yahoo.com/pages/yui/skinbuilder/">YUI的皮肤编辑器</a>会给你带来很大的帮助。通过简单地点击就能够生成一个Pure主题所需要的CSS。
     </p>
@@ -99,9 +127,9 @@
         <a href="http://yui.github.io/skinbuilder/?mode=pure" class="pure-button">开始编辑皮肤</a>
     </p>
 
-    <h2 class="content-subhead">在GitHub上贡献代码</h2>
+    {{sectionHeading "在GitHub上贡献代码"}}
     <p>
-        Pure是一个依照BSD发布的开源项目。欢迎你提交问题反馈。查看<a href="https://github.com/yui/pure">GitHub项目</a>.
+        Pure是一个依照BSD发布的开源项目。欢迎你提交问题反馈。查看<a href="https://github.com/yui/pure">GitHub项目</a>
     </p>
 
 </div>

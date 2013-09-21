@@ -6,9 +6,9 @@
 
 <div class="content">
 
-    <h2 class="content-subhead">默认表单</h2>
+    {{sectionHeading "默认表单"}}
     <p>
-      给{{code "<form>"}}添加类名{{code "pure-form"}}，就可以创建一个默认的表单
+        给{{code "<form>"}}添加类名{{code "pure-form"}}，就可以创建一个默认的表单
     </p>
 
   {{#prefixIds "default"}}
@@ -20,7 +20,7 @@
   {{/code}}
 
 
-    <h2 class="content-subhead" id="stacked-form">叠放式表单</h2>
+    {{sectionHeading "叠放式表单"}}
     <p>
         叠放式表单就是指input元素在标签下面，在默认表单的基础上，再添加一个类名{{code "pure-form-stacked"}}就可以实现。
     </p>
@@ -34,7 +34,7 @@
   {{/code}}
 
 
-    <h2 class="content-subhead">对齐式表单</h2>
+    {{sectionHeading "对齐式表单"}}
     <p>
         在默认表单的基础上，增加一个类名{{code "pure-form-aligned"}}就可以实现对齐式表单。其中，标签是右对齐的，但在小屏幕上，看起来跟<a href="#stacked-form">叠放式表单</a>一样。
     </p>
@@ -47,9 +47,9 @@
     {{> forms/aligned}}
   {{/code}}
 
-    <h2 class="content-subhead">多列表单(使用网格模块)</h2>
+    {{sectionHeading "多列表单(使用网格模块"}}
     <p>
-      在一个<a href="{{pages.grids}}">网格</a>里面，包含表单元素就可以创建多列的表单了。下面就是一个应用了网格的例子：
+        在一个<a href="{{pathTo 'grids'}}">网格</a>里面，包含表单元素就可以创建多列的表单了。下面就是一个应用了网格的例子：
     </p>
 
   {{#prefixIds "multi"}}
@@ -60,7 +60,7 @@
     {{> forms/multi}}
   {{/code}}
 
-    <h2 class="content-subhead">分组</h2>
+    {{sectionHeading "分组"}}
     <p>
         把相关的文本说明和input元素用{{code "<fieldset>"}}元素包裹起来，然后再添加一个类名{{code "pure-group"}}，就可以把input元素分组。分组很适合应用在注册表单，且在移动设备表现得也不错。
     </p>
@@ -74,9 +74,9 @@
   {{/code}}
 
 
-    <h2 class="content-subhead">设置Input的大小</h2>
+    {{sectionHeading "设置Input的大小"}}
     <p>
-        你也可以给Input元素添加类名{{code "pure-input-*"}}，使它拥有流动的宽度，使用方法很像<a href="{{pages.home}}">Pure的网格</a>的使用。
+        你也可以给Input元素添加类名{{code "pure-input-*"}}，使它拥有流动的宽度，使用方法很像<a href="{{pathTo 'grids'}}">Pure的网格</a>的使用。
     </p>
 
   {{#prefixIds "input-size"}}
@@ -100,7 +100,7 @@
   {{/code}}
 
 
-    <h2 class="content-subhead">必填的输入框</h2>
+    {{sectionHeading "必填的输入框"}}
     <p>
         增加{{code "required"}}属性，要求该输入框是必填的。
     </p>
@@ -114,7 +114,7 @@
   {{/code}}
 
 
-    <h2 class="content-subhead">禁用输入框</h2>
+    {{sectionHeading "禁用输入框"}}
     <p>
         增加一个{{code "disabled"}}的属性。
     </p>
@@ -128,7 +128,21 @@
   {{/code}}
 
 
-    <h2 class="content-subhead">圆角输入框</h2>
+    {{sectionHeading "只读输入框"}}
+    <p>
+        增加{{code "readonly"}}属性，可使输入框只读。{{code "readonly"}}和{{code "disabled"}}的区别在于{{code "readonly"}}的输入框依然可以选中聚焦，这意味着可以选中输入框的文本，而{{code "disabled"}}无法选中文本。
+    </p>
+
+  {{#prefixIds "readonly"}}
+    {{> forms/readonly}}
+  {{/prefixIds}}
+
+  {{#code}}
+    {{> forms/readonly}}
+  {{/code}}
+
+
+    {{sectionHeading "圆角输入框"}}
     <p>
         通过添加类名{{code "pure-input-rounded"}}就可以使input有圆角效果。
     </p>
@@ -142,9 +156,9 @@
   {{/code}}
 
 
-    <h2 class="content-subhead">复选框和单选按钮</h2>
+    {{sectionHeading "复选框和单选按钮"}}
     <p>
-      给类名添加{{code "pure-checkbox"}}或者{{code "pure-radio"}}，可以让复选框和单选按钮排列整齐。
+        给类名添加{{code "pure-checkbox"}}或者{{code "pure-radio"}}，可以让复选框和单选按钮排列整齐。
     </p>
 
   {{#prefixIds "checkbox-radio"}}
